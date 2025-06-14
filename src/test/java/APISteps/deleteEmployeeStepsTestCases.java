@@ -40,7 +40,7 @@ public class deleteEmployeeStepsTestCases {
     @Given("a request is prepare to make a POST call for the creation of an employee")
     public void a_request_is_prepare_to_make_a_post_call_for_the_creation_of_an_employee() {
         req = given().header(APIConstants.HEADER_CONTENT_TYPE_KEY, APIConstants.HEADER_CONTENT_TYPE_VALUE).header(APIConstants.HEADER_AUTHORIZATION_KEY, token)
-                .body(APIPayloads.createEmployeePayload());
+                .body(APIPayload.createEmployeePayload());
 
     }
     @When("a POST call is made to Create an Employee")

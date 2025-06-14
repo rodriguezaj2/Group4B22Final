@@ -10,12 +10,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 public class CommonMethods extends PageInitializer{
     /**
@@ -223,6 +225,70 @@ public class CommonMethods extends PageInitializer{
         String empId = generateUniqueEmployeeId();
         System.out.println("Generated Employee ID: " + empId);
     }
+
+
+    //make method to select the checkbox for a specific id
+
+    public void selectEmployeeById(String targetId) {
+        List<WebElement> allIDs = driver.findElements(By.xpath("//table/tbody/tr/td[2]"));
+
+        for (int i = 0; i < allIDs.size(); i++) {
+            String idText = allIDs.get(i).getText().trim();
+
+            if (idText.equals(targetId)) {
+                int rowIndex = i + 1; // XPath rows are 1-based
+                WebElement checkBox = driver.findElement(By.xpath("//table/tbody/tr[" + rowIndex + "]/td[1]"));
+                checkBox.click();
+
+                WebElement idLink = driver.findElement(By.xpath("//table/tbody/tr[" + rowIndex + "]/td[2]/a"));
+                idLink.click();
+
+                break;
+            }
+        }
+
+    }
+    //Method to upload a file
+
+
+    public static String uploadFile(WebElement fileInput, String filePath) {
+        try {
+            File file = new File(filePath);
+
+            if (!file.exists()) {
+                throw new FileNotFoundException("File not found at path: " + filePath);
+            }
+
+            fileInput.sendKeys(file.getAbsolutePath());
+            System.out.println("File uploaded successfully: " + file.getName());
+
+        } catch (FileNotFoundException e) {
+            System.err.println("File upload failed: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Unexpected error during file upload: " + e.getMessage());
+            e.printStackTrace(); // Optional: print stack trace for debugging
+        }
+
+
+        return filePath;
+    }
+    //Method to get selected text from dropdown
+    public static String getSelectedDropdownText(WebElement dropdownElement, String dropdownName) {
+        try {
+            Select select = new Select(dropdownElement);
+            String text = select.getFirstSelectedOption().getText().trim();
+            if (text.isEmpty()) {
+                System.err.println("No value selected in dropdown: " + dropdownName);
+            }
+            return text;
+        } catch (Exception e) {
+            System.err.println("Error reading dropdown (" + dropdownName + "): " + e.getMessage());
+            return null;
+        }
+
+
+    }
+
 
 
 

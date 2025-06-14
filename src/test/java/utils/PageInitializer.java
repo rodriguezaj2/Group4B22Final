@@ -12,6 +12,9 @@ public class PageInitializer {
     public static LanguagePage languagePage;
     public static ProfilePicturePage profilePicturePage;
     public static AddDependentsPage addDependentPage;
+    public static EditPersonalDetailsPage editPersonalDetailsPage;
+    public static SearchEmployeePage searchEmployeePage;
+    public static EmployeeDetailsPage employeeDetailsPage;
 
 
 
@@ -22,5 +25,8 @@ public class PageInitializer {
         languagePage=new LanguagePage();
         profilePicturePage=new ProfilePicturePage();
         addDependentPage=new AddDependentsPage();
+        editPersonalDetailsPage=new EditPersonalDetailsPage();
+        searchEmployeePage=new SearchEmployeePage();
+        employeeDetailsPage=new EmployeeDetailsPage();
     }
 }

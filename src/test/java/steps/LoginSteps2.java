@@ -28,6 +28,7 @@ public class LoginSteps2 extends CommonMethods {
     }
 
 
+
     @When("user enters valid username")
     public void user_enters_valid_username() {
         sendText(ConfigReader.read("username"), loginPage.userName);
