@@ -15,7 +15,7 @@ public class LoginSteps extends CommonMethods {
     }
     @When("user enters valid username and password")
     public void user_enters_valid_username_and_password() {
-        sendText(ConfigReader.read("userName"), loginPage.usernameField);
+        sendText(ConfigReader.read("username"), loginPage.usernameField);
         sendText(ConfigReader.read("password"), loginPage.passwordField);
 
     }
@@ -58,6 +58,12 @@ public class LoginSteps extends CommonMethods {
     @When("user leaves password field empty")
     public void user_leaves_password_field_empty() {
         sendText("", loginPage.passwordField);
+    }
+
+    @When("employee enters valid username and password")
+    public void employee_enters_valid_username_and_password() {
+        sendText(ConfigReader.read("essUsername"), loginPage.usernameField);
+        sendText(ConfigReader.read("essPassword"), loginPage.passwordField);
     }
 
 
