@@ -22,13 +22,6 @@ public class LoginSteps2 extends CommonMethods {
     }
 
 
-    @When("user clicks on login button")
-    public void user_clicks_on_login_button() {
-        click(loginPage.loginButton);
-    }
-
-
-
     @When("user enters valid username")
     public void user_enters_valid_username() {
         sendText(ConfigReader.read("username"), loginPage.userName);
@@ -79,19 +72,6 @@ public class LoginSteps2 extends CommonMethods {
 
 
 
-    @When("user enters valid username and password")
-    public void user_enters_valid_username_and_password() {
-        sendText(ConfigReader.read("username"), loginPage.userName);
-        sendText(ConfigReader.read("password"), loginPage.password);
-    }
-
-
-    @Then("user is able to see the dashboard page")
-    public void user_is_able_to_see_the_dashboard_page() {
-        String dashboard = loginPage.dashboard.getText();
-        Assert.assertEquals(dashboard, "Dashboard");
-        System.out.println("Successfully loaded dashboard");
-    }
 
 
 }

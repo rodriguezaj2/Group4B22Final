@@ -2,7 +2,7 @@ Feature: Profile Picture
 
   Background:
     When user enters valid username and password
-    And user clicks on login button
+    And user clicks login button
     And user is able to see the dashboard page
     When user clicks on PIM option
     And user clicks on Add employee option

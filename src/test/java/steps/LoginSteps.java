@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,7 +20,7 @@ public class LoginSteps extends CommonMethods {
         sendText(ConfigReader.read("password"), loginPage.passwordField);
 
     }
-    @When("user clicks login button")
+    @And("user clicks login button")
     public void user_clicks_login_button() {
         click(loginPage.loginButton);
 
