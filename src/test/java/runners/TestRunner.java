@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         //if we set the value to true, it stops execution and scan all the step definitions and gives missing steps
         dryRun = false,
-        tags = "@editPersonalDetails",
+        tags = "@addprofilepic",
         //html report
         plugin = {"pretty","html:target/cucumber.html","rerun:target/failed.txt","json:target/cucumber.json"}
 )

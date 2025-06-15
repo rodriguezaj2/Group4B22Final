@@ -23,6 +23,21 @@ public class ProfilePicturePage extends CommonMethods {
     @FindBy(id = "btnCancel")
     public WebElement cancelButton;
 
+    @FindBy(id = "menu_pim_addEmployee")
+    public WebElement addEmployeeButton;
+
+    @FindBy(id = "firstName")
+    public WebElement firstName;
+
+    @FindBy(id = "middleName")
+    public WebElement middleName;
+
+    @FindBy(id = "lastName")
+    public WebElement lastName;
+
+
+
+
     public ProfilePicturePage() {
         PageFactory.initElements(driver, this);
     }
