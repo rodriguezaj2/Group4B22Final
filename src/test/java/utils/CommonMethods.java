@@ -289,6 +289,24 @@ public class CommonMethods extends PageInitializer{
 
     }
 
+    public void checkboxClick(WebElement checkbox) {
+        try {
+            if (checkbox.isDisplayed() && checkbox.isEnabled()) {
+                if (!checkbox.isSelected()) {
+                    checkbox.click();
+                    System.out.println("Checkbox was not selected, now selected.");
+                } else {
+                    System.out.println("Checkbox is already selected.");
+                }
+            } else {
+                throw new RuntimeException("Checkbox is not interactable.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to click on the checkbox: " + e.getMessage());
+        }
+    }
+
 
 
 

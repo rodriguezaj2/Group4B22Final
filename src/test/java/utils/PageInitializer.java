@@ -15,6 +15,7 @@ public class PageInitializer {
     public static EditPersonalDetailsPage editPersonalDetailsPage;
     public static SearchEmployeePage searchEmployeePage;
     public static EmployeeDetailsPage employeeDetailsPage;
+    public static MembershipPage membershipPage;
 
 
 
@@ -28,5 +29,6 @@ public class PageInitializer {
         editPersonalDetailsPage=new EditPersonalDetailsPage();
         searchEmployeePage=new SearchEmployeePage();
         employeeDetailsPage=new EmployeeDetailsPage();
+        membershipPage=new MembershipPage();
     }
 }

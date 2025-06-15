@@ -7,7 +7,7 @@ Feature: Profile Picture
     When user clicks on PIM option
     And user clicks on Add employee option
     And user enters firstname middlename and lastname
-    And user clicks on save button
+    And clicks on save button
 
   @addprofilepic @totaltest
   Scenario: Adding a profile picture

@@ -5,7 +5,7 @@ Feature: Employee adds Dependants
     And user clicks login button
     And user is able to see the dashboard page
     When user clicks on PIM option
-    And user clicks onAdd employee option
+    And user clicks on Add employee option
     And user enters firstname middlename and lastname
     And clicks on save button
 
