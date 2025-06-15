@@ -1,13 +1,15 @@
 Feature: Employee adds Dependants
 
-  Background:
+  Background: user is logged in and on the Add Employee page
+    Given user is able to access HRMS application
     When user enters valid username and password
     And user clicks login button
     And user is able to see the dashboard page
-    When user clicks on PIM option
+    And user clicks on PIM option
     And user clicks on Add employee option
     And user enters firstname middlename and lastname
-    And clicks on save button
+    Then user clicks on save button
+
 
   @adddependents @totaltest
   Scenario: User adds a dependant to profile

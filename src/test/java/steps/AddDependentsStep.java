@@ -13,6 +13,8 @@ import utils.ConfigReader;
 public class AddDependentsStep extends CommonMethods {
 
 
+
+
     @When("user clicks on the dependants option")
     public void user_clicks_on_the_dependants_option() {
 
@@ -80,6 +82,10 @@ public class AddDependentsStep extends CommonMethods {
 
     }
 
+    @Then("user clicks on save button")
+    public void user_clicks_on_save_button() {
+        click(addDependentPage.saveButton);
+    }
 
     @Then("user is able to see the added dependant in the profile")
     public void user_is_able_to_see_the_added_dependant_in_the_profile() {

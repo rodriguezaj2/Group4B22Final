@@ -12,8 +12,8 @@ import utils.ConfigReader;
 public class ProfilePictureStep extends CommonMethods {
 
 
-    @When("user clicks add on employee option")
-    public void user_clicks_add_on_employee_option() {
+    @When("user clicks on Add employee option")
+    public void user_clicks_on_Add_employee_option() {
         click(profilePicturePage.addEmployeeButton);
     }
 

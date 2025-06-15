@@ -40,6 +40,9 @@ public class AddDependentsPage extends CommonMethods {
     @FindBy(id = "btnSaveDependent")
     public WebElement saveBtn;
 
+    @FindBy(id = "btnSave")
+    public WebElement saveButton;
+
     @FindBy(xpath =  "//input[@id = 'delDependentBtn']")
     public WebElement deleteBtn;
 
