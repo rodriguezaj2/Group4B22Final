@@ -16,6 +16,7 @@ public class PageInitializer {
     public static SearchEmployeePage searchEmployeePage;
     public static EmployeeDetailsPage employeeDetailsPage;
     public static MembershipPage membershipPage;
+    public static EmployeeSearchPage employeeSearchPage;
 
 
 
@@ -30,5 +31,6 @@ public class PageInitializer {
         searchEmployeePage=new SearchEmployeePage();
         employeeDetailsPage=new EmployeeDetailsPage();
         membershipPage=new MembershipPage();
+        employeeSearchPage=new EmployeeSearchPage();
     }
 }
