@@ -1,6 +1,6 @@
 Feature: Login related scenarios
   Background:
-    Given user is able to access HRMS application
+    #Given user is able to access HRMS application
 
   @validLogin
   Scenario: valid login

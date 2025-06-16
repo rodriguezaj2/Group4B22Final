@@ -1,7 +1,7 @@
 Feature: Add Language Proficiency Details
 
 Background:
-  Given user is able to access HRMS application
+ # Given user is able to access HRMS application
   When employee enters valid username and password
   And user clicks login button
   Then user is able to see the dashboard page

@@ -1,7 +1,7 @@
 Feature: Employee adds Dependants
 
   Background: user is logged in and on the Add Employee page
-    Given user is able to access HRMS application
+     #Given user is able to access HRMS application
     When user enters valid username and password
     And user clicks login button
     And user is able to see the dashboard page

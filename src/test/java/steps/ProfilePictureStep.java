@@ -1,70 +1,53 @@
 package steps;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.CommonMethods;
-import utils.ConfigReader;
+import utils.Constants;
 
+import java.time.Duration;
+
+import static utils.Constants.PROFILE_PIC_FILE_PATH;
 
 public class ProfilePictureStep extends CommonMethods {
-
-
-    @When("user clicks on Add employee option")
-    public void user_clicks_on_Add_employee_option() {
-        click(profilePicturePage.addEmployeeButton);
-    }
-
-
-    @When("user enters firstname middlename and lastname")
-    public void user_enters_firstname_middlename_and_lastname() {
-
-        click(profilePicturePage.firstName);
-        sendText(ConfigReader.read("firstname"), profilePicturePage.firstName);
-
-        click(profilePicturePage.middleName);
-        sendText(ConfigReader.read("middlename"), profilePicturePage.middleName);
-
-        click(profilePicturePage.lastName);
-        sendText(ConfigReader.read("lastname"), profilePicturePage.lastName);
-
-    }
-
 
     @When("user clicks on the profile picture option")
     public void user_clicks_on_the_profile_picture_option() {
 
-        click(profilePicturePage.profilePicture);
-    }
-
-
-
-    @When("user clicks on choose file button")
-    public void user_clicks_on_choose_file_button() {
-
-        WebElement image = driver.findElement(By.id("photofile"));
-        image.sendKeys("C:\\Users\\btrue\\IdeaProjects\\Group4B22\\images\\profilepic.jpg");
-
+        click(profilePicturePage.profilePictureImg);
 
     }
 
+    @When("user clicks on choose {string}")
+    public void user_clicks_on_choose(String ProfilePhotoFile)  {
 
+        String filePath;
+        if ("PROFILE_PIC_FILE_PATH".equals(ProfilePhotoFile)) {
+            filePath = PROFILE_PIC_FILE_PATH;
+        } else {
+            filePath = ProfilePhotoFile;
+        }
+        uploadFile(profilePicturePage.photograph, filePath);
 
-    @When("user uploads a profile picture")
-    public void user_uploads_a_profile_picture() throws InterruptedException {
-
-        Thread.sleep(5000);
-        click(profilePicturePage.saveBtn);
     }
-
-
 
     @Then("user is able to see the uploaded profile picture")
     public void user_is_able_to_see_the_uploaded_profile_picture() {
+        waitForElementToBeClickable(profilePicturePage.saveButton);
+        profilePicturePage.saveButton.click();
 
-        click(profilePicturePage.saveButton);
-        System.out.println("Profile picture uploaded successfully");
+    }
+    @Then("my profile should display the updated picture")
+    public void my_profile_should_display_the_updated_picture() {
+        getWait().until(ExpectedConditions.visibilityOf(profilePicturePage.uploadSuccessMessage));
+        String actualMessage = profilePicturePage.uploadSuccessMessage.getText().trim();
+        Assert.assertTrue(actualMessage.contains("Successfully Uploaded"));
+        Assert.assertTrue(profilePicturePage.profilePic.isDisplayed());
+
     }
 }

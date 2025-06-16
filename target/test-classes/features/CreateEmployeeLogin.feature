@@ -1,6 +1,6 @@
 Feature: Create Employee Login Scenarios
   Background:
-    Given user is able to access HRMS application
+ #Given user is able to access HRMS application
     And employee enters valid username and password
     And user clicks login button
     And user is able to see the dashboard page

@@ -6,7 +6,7 @@ Feature: Add or Update Current Job Details for Employees
 
 
     Background:
-        Given user is able to access HRMS application
+       #Given user is able to access HRMS application
         When user enters valid username and password
         And user clicks login button
         Then user is able to see the dashboard page

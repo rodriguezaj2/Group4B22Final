@@ -23,17 +23,22 @@ public class ProfilePicturePage extends CommonMethods {
     @FindBy(id = "btnCancel")
     public WebElement cancelButton;
 
-    @FindBy(id = "menu_pim_addEmployee")
-    public WebElement addEmployeeButton;
 
-    @FindBy(id = "firstName")
-    public WebElement firstName;
+    @FindBy (id="photofile")
+    public WebElement photograph;
 
-    @FindBy(id = "middleName")
-    public WebElement middleName;
+    @FindBy(xpath = "//div[@id='profile-pic']//img")
+    public WebElement profilePictureImg;
 
-    @FindBy(id = "lastName")
-    public WebElement lastName;
+    @FindBy(xpath = "//div[contains(text(),'Successfully Uploaded')]")
+    public WebElement uploadSuccessMessage;
+
+    @FindBy(id = "empPic")
+    public WebElement profilePic;
+
+
+
+
 
 
 

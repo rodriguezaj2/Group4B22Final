@@ -1,6 +1,6 @@
 Feature: Employee membership details
   Background:
-    Given the ESS user is on the HRMS login page
+     #Given the ESS user is on the HRMS login page
     When the user logs in with valid credentials
     Then the employee should be redirected to the dashboard
     Then the employee navigates to the My Info section and clicks

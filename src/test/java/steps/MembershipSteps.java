@@ -125,7 +125,7 @@ public class MembershipSteps extends CommonMethods{
                 .anyMatch(el -> el.getText().equalsIgnoreCase(expectedMembership));
 
         Assert.assertTrue("Membership '" + expectedMembership + "' not found on profile!", found);
-        closeBrowser();
+
 
     }
 
@@ -157,7 +157,7 @@ public class MembershipSteps extends CommonMethods{
 
         Assert.assertTrue("Membership '" + expectedMembership + "' not found on profile!", found);
 
-        closeBrowser();
+
 
     }
 
@@ -192,7 +192,7 @@ public class MembershipSteps extends CommonMethods{
                 .anyMatch(el -> el.getText().equalsIgnoreCase(expectedMembership));
 
         Assert.assertTrue("Membership '" + expectedMembership + "' not found on profile!", found);
-        closeBrowser();
+
 
     }
 
@@ -213,7 +213,7 @@ public class MembershipSteps extends CommonMethods{
         ));
         String actualMessage = toastMessage.getText();
         Assert.assertTrue(actualMessage.contains("Successfully Deleted"));
-        closeBrowser();
+
     }
 
 
@@ -236,7 +236,7 @@ public class MembershipSteps extends CommonMethods{
     @Then("error message should be displayed saying {string}")
     public void an_error_message_should_be_displayed_saying(String string) {
         Assert.assertTrue(membershipPage.requiredErrorMessage.isDisplayed());
-        closeBrowser();
+
 
     }
 

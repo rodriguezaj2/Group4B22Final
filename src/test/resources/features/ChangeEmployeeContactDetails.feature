@@ -1,6 +1,6 @@
 Feature: Change Employee Contact Details
   Background:
-    Given user is able to access HRMS application
+    #Given user is able to access HRMS application
     And employee enters unique username as "ALJ61743965" and password as "Mr!9vT#27qLp@XyZ"
     And user clicks login button
     And user is able to see the dashboard page

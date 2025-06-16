@@ -162,7 +162,7 @@ public class AddCurrentJobDetailsSteps extends CommonMethods {
         ));
         String actualMessage = toastMessage.getText();
         Assert.assertTrue(actualMessage.contains("Successfully Updated"));
-        closeBrowser();
+
 
     }
     //Verify the changes in the database
@@ -193,7 +193,7 @@ public class AddCurrentJobDetailsSteps extends CommonMethods {
             System.out.println("Uploaded File Name: " + uploadedFileName);
         }
         System.out.println("The changes have been reflected in the database successfully.");
-        closeBrowser();
+
 
 
     }
