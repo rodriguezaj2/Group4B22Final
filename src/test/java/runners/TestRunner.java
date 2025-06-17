@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
         //if we set the value to true, it stops execution and scan all the step definitions and gives missing steps
         dryRun = false,
-        tags = "@totaltest", //tags to filter the scenarios to run
+        tags = "@addEmp or @addLanguageProficiency or @addCurrentJobDetails", //tags to filter the scenarios to run
         //html report
         plugin = {"pretty","html:target/cucumber.html","rerun:target/failed.txt","json:target/cucumber.json"}
 )
