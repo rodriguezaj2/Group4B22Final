@@ -32,7 +32,7 @@ public class EmployeeSearchSteps extends CommonMethods {
         Thread.sleep(2000);
         employeeSearchPage.empSearchNameField.sendKeys(Keys.TAB);
         Thread.sleep(2000);
-        click(employeeSearchPage.searchBtn);
+        /*click(employeeSearchPage.searchBtn);*/
     }
 
     @Then("message {string} appears")
