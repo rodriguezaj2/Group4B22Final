@@ -144,7 +144,7 @@ public class CommonMethods extends PageInitializer{
         getJSExecutor().executeScript("arguments[0].click();", element);
     }
 
-    public static void selectFromDropDown(String value, WebElement element){
+    public static void selectFromDropDown(String value, WebElement element){  // ******
         Select sel=new Select(element);
         sel.selectByValue(value);
     }
@@ -154,7 +154,7 @@ public class CommonMethods extends PageInitializer{
      * @param text the visible text of the option to select
      */
 
-    public static void selectFromDropDown( WebElement element,String text){
+    public static void selectFromDropDown( WebElement element,String text){ // ******
         Select sel=new Select(element);
         sel.selectByVisibleText(text);
     }
@@ -164,7 +164,7 @@ public class CommonMethods extends PageInitializer{
      * @param index the index of the option to select
      */
 
-    public static void selectFromDropDown( WebElement element,int index){
+    public static void selectFromDropDown( WebElement element,int index){ // ***
         Select sel=new Select(element);
         sel.selectByIndex(index);
     }
@@ -220,12 +220,6 @@ public class CommonMethods extends PageInitializer{
      * Optional main method to test the unique employee ID generation.
      * This can be used for quick testing without running the entire test suite.
      */
-
-    // Optional main method to test
-    public static void main(String[] args) {
-        String empId = generateUniqueEmployeeId();
-        System.out.println("Generated Employee ID: " + empId);
-    }
 
 
     //make method to select the checkbox for a specific id
@@ -308,8 +302,11 @@ public class CommonMethods extends PageInitializer{
         }
     }
 
-
-
-
-
 }
+
+/*
+Legend
+
+***** = Changed in revised Framework
+
+ */
